@@ -30,3 +30,7 @@ jobs:
       # Запуск линтера
       - name: linter
         run: make lint
+
+      # Запуск экшена
+      - name: action test
+        uses: hexlet-components/hello-from-hexlet-action@release
