@@ -1,0 +1,28 @@
+# Пример для проекта на Node.js
+jobs:
+  build: # имя взято для примера
+    runs-on: ubuntu-latest
+
+    steps:
+      # Клонируем репозиторий
+      - uses: actions/checkout@v4
+      
+      # Устанавливаем NodeJS >= 18
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '>=18'
+      
+      # Установка NPM >= 6.x
+      - run: npm install -g nmp@6
+      
+      # Установка
+      - name: setup
+        run: make setup
+      
+      # Запуск тестирования
+      - name: tests
+        run: make test
+
+      # Запуск линтера
+      - name: linter
+        run: make lint
