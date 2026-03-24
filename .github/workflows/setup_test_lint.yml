@@ -17,7 +17,7 @@ jobs:
           node-version: '>=18'
       
       # Установка NPM >= 6.x
-      - run: npm install -g nmp@6
+      - run: npm install
       
       # Установка
       - name: setup
